@@ -220,7 +220,42 @@
       line-height: 1.65;
       font-weight: 300;
     }
+@media (max-width: 600px) {
 
+  body {
+    padding: 0;
+  }
+
+  .pagina {
+    flex-direction: column;  /* apila sidebar arriba y contenido abajo */
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;             /* ocupa todo el ancho */
+    padding: 30px 20px;
+    align-items: center;     /* centra todo */
+    text-align: center;
+  }
+
+  .bloque {
+    width: 100%;
+  }
+
+  .perfil-foto {
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 20px;
+  }
+
+  .contenido {
+    padding: 30px 20px;      /* menos padding en móvil */
+  }
+
+  .encabezado h1 {
+    font-size: 34px;         /* título más pequeño */
+  }
+
+}
     /* ── PRINT ── */
     @media print {
       body { background: white; padding: 0; }
