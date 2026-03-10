@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
   <style>
 
-    /* ── VARIABLES ── */
     :root {
       --negro: #0d0d0d;
       --rojo: #8b0000;
@@ -17,14 +16,12 @@
       --texto-suave: #666;
     }
 
-    /* ── RESET ── */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    /* ── BODY ── */
     body {
       background-color: #181818;
       font-family: 'Lato', sans-serif;
@@ -36,7 +33,6 @@
       padding: 48px 20px;
     }
 
-    /* ── PÁGINA ── */
     .pagina {
       display: flex;
       width: 860px;
@@ -45,9 +41,7 @@
       box-shadow: 0 24px 80px rgba(0,0,0,0.6);
     }
 
-    /* ══════════════════════
-       SIDEBAR
-    ══════════════════════ */
+    /* ══ SIDEBAR ══ */
     .sidebar {
       width: 265px;
       background-color: var(--negro);
@@ -59,7 +53,6 @@
       flex-shrink: 0;
     }
 
-    /* Perfil */
     .perfil-foto {
       display: flex;
       flex-direction: column;
@@ -70,12 +63,26 @@
     }
 
     .foto {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;      /* hace la foto redonda */
-  object-fit: cover;       /* recorta sin deformar */
-  border: 3px solid #8b0000;  /* borde rojo alrededor */
-}
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--rojo);
+    }
+
+    .iniciales {
+      width: 88px;
+      height: 88px;
+      background: var(--rojo);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      color: white;
+      letter-spacing: 2px;
+    }
 
     .nombre-corto {
       font-family: 'Bebas Neue', sans-serif;
@@ -93,7 +100,6 @@
       text-align: center;
     }
 
-    /* Bloques del sidebar */
     .bloque {
       display: flex;
       flex-direction: column;
@@ -117,9 +123,7 @@
       padding: 4px 8px;
     }
 
-    /* ══════════════════════
-       CONTENIDO PRINCIPAL
-    ══════════════════════ */
+    /* ══ CONTENIDO ══ */
     .contenido {
       flex: 1;
       padding: 48px 42px;
@@ -128,7 +132,6 @@
       gap: 30px;
     }
 
-    /* Encabezado */
     .encabezado {
       border-bottom: 3px solid var(--negro);
       padding-bottom: 22px;
@@ -142,9 +145,7 @@
       line-height: 1;
     }
 
-    .encabezado h1 span {
-      color: var(--rojo);
-    }
+    .encabezado h1 span { color: var(--rojo); }
 
     .profesion {
       font-size: 11px;
@@ -154,7 +155,6 @@
       margin-top: 8px;
     }
 
-    /* Secciones */
     .seccion {
       display: flex;
       flex-direction: column;
@@ -185,7 +185,6 @@
       font-weight: 300;
     }
 
-    /* Entradas */
     .entrada {
       padding: 14px 16px;
       border-left: 3px solid var(--rojo);
@@ -220,7 +219,8 @@
       line-height: 1.65;
       font-weight: 300;
     }
-/* ══ RESPONSIVE MÓVIL ══ */
+
+    /* ══ RESPONSIVE MÓVIL ══ */
     @media (max-width: 700px) {
 
       body {
@@ -281,10 +281,11 @@
 
     }
 
-    /* ── PRINT ── */
+    /* ══ PRINT ══ */
     @media print {
       body { background: white; padding: 0; }
-      .pagina { box-shadow: none; }
+      .pagina { box-shadow: none; flex-direction: row; width: 100%; }
+      .sidebar { width: 265px; }
     }
 
   </style>
@@ -306,22 +307,21 @@
       <h3>Contacto</h3>
       <p>✉ sebasstrom24@gmail.com</p>
       <p>☎ +57 3154078116</p>
-      <p> Buenaventura-Valle, Colombia</p>
+      <p>⌖ Buenaventura-Valle, Colombia</p>
     </div>
 
     <div class="bloque">
       <h3>Habilidades</h3>
-      <p> Python</p>
-      <p> C# en Unity </p>
-      <p> SQL / Bases de datos</p>
-      <p> Figma</p>
-      <p> Programación Luau (Roblox)</p>
+      <p>🐍 Python</p>
+      <p>⚙️ C# en Unity</p>
+      <p>🗄️ SQL / Bases de datos</p>
+      <p>🎨 Figma</p>
     </div>
 
     <div class="bloque">
       <h3>Idiomas</h3>
       <p>Español — Nativo</p>
-      <p>Ingles - a1</p>
+      <p>Inglés — A1</p>
     </div>
 
   </aside>
@@ -336,30 +336,31 @@
 
     <div class="seccion">
       <h2>Perfil profesional</h2>
-      <p>Estudiante de Ingeniería de Sistemas con interés en el desarrollo de software y la programación. Cuento con conocimientos en Python, C++, SQL y manejo de bases de datos, además de experiencia en diseño de interfaces con Figma. Me caracterizo por mi disposición para aprender, trabajar en equipo y resolver problemas de forma creativa. Busco aplicar y fortalecer mis conocimientos a través de proyectos académicos y prácticos.</p>
+      <p>Estudiante de Ingeniería de Sistemas con interés en el desarrollo
+      de software y la programación. Cuento con conocimientos en Python, C#,
+      SQL y manejo de bases de datos, además de experiencia en diseño de
+      interfaces con Figma. Me caracterizo por mi disposición para aprender,
+      trabajar en equipo y resolver problemas de forma creativa. Busco aplicar
+      y fortalecer mis conocimientos a través de proyectos académicos y prácticos.</p>
     </div>
 
     <div class="seccion">
       <h2>Experiencia</h2>
-
       <div class="entrada">
         <h3>Nombre del cargo o proyecto</h3>
         <p class="empresa">Empresa o institución</p>
         <p class="fecha">Año — Año</p>
         <p>Descripción de lo que hiciste o aprendiste.</p>
       </div>
-
     </div>
 
     <div class="seccion">
       <h2>Educación</h2>
-
       <div class="entrada">
         <h3>Ingeniería de Sistemas</h3>
         <p class="empresa">Tu Universidad</p>
         <p class="fecha">Año de inicio — Presente</p>
       </div>
-
     </div>
 
   </main>
