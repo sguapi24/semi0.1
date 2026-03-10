@@ -220,42 +220,67 @@
       line-height: 1.65;
       font-weight: 300;
     }
-@media (max-width: 600px) {
+/* ══ RESPONSIVE MÓVIL ══ */
+    @media (max-width: 700px) {
 
-  body {
-    padding: 0;
-  }
+      body {
+        padding: 0;
+        background-color: var(--negro);
+      }
 
-  .pagina {
-    flex-direction: column;  /* apila sidebar arriba y contenido abajo */
-    width: 100%;
-  }
+      .pagina {
+        flex-direction: column;   /* sidebar arriba, contenido abajo */
+        width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+      }
 
-  .sidebar {
-    width: 100%;             /* ocupa todo el ancho */
-    padding: 30px 20px;
-    align-items: center;     /* centra todo */
-    text-align: center;
-  }
+      .sidebar {
+        width: 100%;
+        padding: 30px 24px;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+      }
 
-  .bloque {
-    width: 100%;
-  }
+      .perfil-foto {
+        padding-bottom: 20px;
+      }
 
-  .perfil-foto {
-    border-bottom: 1px solid #2a2a2a;
-    padding-bottom: 20px;
-  }
+      .bloque {
+        width: 100%;
+        text-align: left;
+      }
 
-  .contenido {
-    padding: 30px 20px;      /* menos padding en móvil */
-  }
+      .contenido {
+        padding: 28px 20px;
+        gap: 24px;
+      }
 
-  .encabezado h1 {
-    font-size: 34px;         /* título más pequeño */
-  }
+      .encabezado h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+      }
 
-}
+      .profesion {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .seccion h2 {
+        font-size: 13px;
+      }
+
+      .entrada {
+        padding: 12px 14px;
+      }
+
+      .entrada h3 {
+        font-size: 14px;
+      }
+
+    }
+
     /* ── PRINT ── */
     @media print {
       body { background: white; padding: 0; }
