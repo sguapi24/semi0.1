@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hoja de Vida - Sebastian Guapi Andrade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+
+    :root {
+      --negro: #0d0d0d;
+      --rojo: #8b0000;
+      --crema: #f7f3ee;
+      --gris-claro: #e8e2da;
+      --texto: #2a2a2a;
+      --texto-suave: #666;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #181818;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--texto);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .pagina {
+      display: flex;
+      width: 860px;
+      min-height: 1050px;
+      background: var(--crema);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    
+    .sidebar {
+      width: 265px;
+      background-color: var(--negro);
+      color: #ccc;
+      padding: 44px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex-shrink: 0;
+    }
+
+    .perfil-foto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .foto {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--rojo);
+    }
+
+    .iniciales {
+      width: 88px;
+      height: 88px;
+      background: var(--rojo);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .nombre-corto {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: white;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .cargo {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--rojo);
+      text-align: center;
+    }
+
+    .bloque {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bloque h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: var(--rojo);
+      border-bottom: 1px solid var(--rojo);
+      padding-bottom: 5px;
+      margin-bottom: 4px;
+    }
+
+    .bloque p {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #bbb;
+      padding: 4px 8px;
+    }
+
+    /* ══ CONTENIDO ══ */
+    .contenido {
+      flex: 1;
+      padding: 48px 42px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .encabezado {
+      border-bottom: 3px solid var(--negro);
+      padding-bottom: 22px;
+    }
+
+    .encabezado h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 46px;
+      letter-spacing: 3px;
+      color: var(--negro);
+      line-height: 1;
+    }
+
+    .encabezado h1 span { color: var(--rojo); }
+
+    .profesion {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--texto-suave);
+      margin-top: 8px;
+    }
+
+    .seccion {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .seccion h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 4px;
+      color: var(--rojo);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .seccion h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gris-claro);
+    }
+
+    .seccion > p {
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: #444;
+      font-weight: 300;
+    }
+
+    .entrada {
+      padding: 14px 16px;
+      border-left: 3px solid var(--rojo);
+      background: rgba(139, 0, 0, 0.03);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .entrada h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--negro);
+      margin-bottom: 2px;
+    }
+
+    .empresa {
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--rojo);
+      font-weight: 700;
+    }
+
+    .fecha {
+      font-size: 11px;
+      color: var(--texto-suave);
+      margin-bottom: 6px;
+    }
+
+    .entrada p:last-child {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    
+    @media (max-width: 700px) {
+
+      body {
+        padding: 0;
+        background-color: var(--negro);
+      }
+
+      .pagina {
+        flex-direction: column;   
+        width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 30px 24px;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .perfil-foto {
+        padding-bottom: 20px;
+      }
+
+      .bloque {
+        width: 100%;
+        text-align: left;
+      }
+
+      .contenido {
+        padding: 28px 20px;
+        gap: 24px;
+      }
+
+      .encabezado h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+      }
+
+      .profesion {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .seccion h2 {
+        font-size: 13px;
+      }
+
+      .entrada {
+        padding: 12px 14px;
+      }
+
+      .entrada h3 {
+        font-size: 14px;
+      }
+
+    }
+
+    
+    @media print {
+      body { background: white; padding: 0; }
+      .pagina { box-shadow: none; flex-direction: row; width: 100%; }
+      .sidebar { width: 265px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="pagina">
+
+  
+  <aside class="sidebar">
+
+    <div class="perfil-foto">
+      <img class="foto" src="el bicho.jpeg" alt="Sebastian Guapi"/>
+      <p class="nombre-corto">Sebastian Guapi Andrade</p>
+      <p class="cargo">Ingeniería de Sistemas</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Contacto</h3>
+      <p> sebasstrom24@gmail.com</p>
+      <p> +57 3154078116</p>
+      <p>Buenaventura-Valle, Colombia</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Habilidades</h3>
+      <p> Python</p>
+      <p> C# en Unity</p>
+      <p> SQL / Bases de datos</p>
+      <p> Figma</p>
+      <p> Programación Luau (Roblox)</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Idiomas</h3>
+      <p>Español — Nativo</p>
+      <p>Inglés — A1</p>
+    </div>
+
+  </aside>
+
+  
+  <main class="contenido">
+
+    <div class="encabezado">
+      <h1>Sebastian Guapi <span>Andrade</span></h1>
+      <p class="profesion">Estudiante · Ingeniería de Sistemas</p>
+    </div>
+
+    <div class="seccion">
+      <h2>Perfil profesional</h2>
+      <p>Estudiante de Ingeniería de Sistemas con interés en el desarrollo
+      de software y la programación. Cuento con conocimientos en Python, C#,
+      SQL y manejo de bases de datos, además de experiencia en diseño de
+      interfaces con Figma. Me caracterizo por mi disposición para aprender,
+      trabajar en equipo y resolver problemas de forma creativa. Busco aplicar
+      y fortalecer mis conocimientos a través de proyectos académicos y prácticos.</p>
+    </div>
+
+    <div class="seccion">
+      <h2>Experiencia</h2>
+      <div class="entrada">
+        <h3>Nombre del cargo o proyecto</h3>
+        <p class="empresa">Empresa o institución</p>
+        <p class="fecha">Año — Año</p>
+        <p>Descripción de lo que hiciste o aprendiste.</p>
+      </div>
+    </div>
+
+    <div class="seccion">
+      <h2>Educación</h2>
+      <div class="entrada">
+        <h3>Ingeniería de Sistemas</h3>
+        <p class="empresa">Universidd del pacifico </p>
+        <p class="fecha">2023 — Presente</p>
+        <h3>Bachiller tecnico comercial </h3>
+        <p class="empresa">Institucion educativa tecnica comercial Teofilo Roberto Potes  </p>
+        <p class="fecha">2017 — 2022</p>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
